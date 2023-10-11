@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pendo - Segment Test Page</title>
+</head>
+<body>
+    <h1 style="font-size: 24px; text-align: center;">Pendo - Segment Test Page</h1>
+    <button id="segmentButton">Click Me</button>
+
+    <script>
+        document.getElementById("segmentButton").addEventListener("click", function() {
+            // Segment Identify Call
+            analytics.identify('Rickey123', {
+                full_name: 'Rickey Di Dio',
+                tier: 'silver'
+            });
+
+            // Segment Group Call
+            analytics.group('Pendo', {
+                Industry: 'SaaS'
+            });
+
+            // You should replace 'analytics' with your actual Segment analytics object.
+            // Make sure you have the Segment analytics library included in your project.
+
+            alert('Segment Identify and Group calls fired!');
+        });
+    </script>
+</body>
+</html>
