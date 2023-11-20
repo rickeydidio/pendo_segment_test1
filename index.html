@@ -11,17 +11,39 @@
 </head>
 <body>
     <h1 style="font-size: 24px; text-align: center;">Pendo - Segment Test Page</h1>
-    <button id="segmentButton">Click Me</button>
+    <button id="segmentButton">Click Me-Identify</button>
+    <button id="segmentButton2">Click Me-Identify+Group</button>
+    <button id="segmentButton3">Click Me-Track</button>
+    <button id="segmentButton4">Click Me-Track+Group</button>
 
     <script>
         document.getElementById("segmentButton").addEventListener("click", function() {
-            // Segment Identify Call
-         //   analytics.identify('Rickey123', {
-         //       full_name: 'Rickey Di Dio',
-         //       tier: 'silver'
-        //    });
+           // Segment Identify Call
+            analytics.identify('Rickey123', {
+                full_name: 'Rickey Di Dio',
+                tier: 'silver'
+            });
 
-            // Segment Group Call
+       //      Segment Group Call
+         //   analytics.group('Pendo', {
+         //       Industry: 'SaaS'
+       //     });
+
+            // You should replace 'analytics' with your actual Segment analytics object.
+            // Make sure you have the Segment analytics library included in your project.
+
+            alert('Segment Identify call fired!');
+        });
+    </script>
+    <script>
+        document.getElementById("segmentButton2").addEventListener("click", function() {
+           // Segment Identify + group Call
+            analytics.identify('Rickey123', {
+                full_name: 'Rickey Di Dio',
+                tier: 'silver'
+            });
+
+       //      Segment Group Call
             analytics.group('Pendo', {
                 Industry: 'SaaS'
             });
@@ -30,6 +52,45 @@
             // Make sure you have the Segment analytics library included in your project.
 
             alert('Segment Identify and Group calls fired!');
+        });
+    </script>
+    <script>
+        document.getElementById("segmentButton3").addEventListener("click", function() {
+           // Segment Track Call
+            analytics.track('Track Call', {
+                full_name: 'Rickey Di Dio',
+                tier: 'silver'
+            });
+
+       //      Segment Group Call
+         //   analytics.group('Pendo', {
+        //        Industry: 'SaaS'
+        //    });
+
+            // You should replace 'analytics' with your actual Segment analytics object.
+            // Make sure you have the Segment analytics library included in your project.
+
+            alert('Segment Track call fired!');
+        });
+    </script>
+    <script>
+        document.getElementById("segmentButton4").addEventListener("click", function() {
+           // Segment Track + Group Call
+            analytics.track('Track and Account', {
+                full_name: 'Rickey Di Dio',
+                accountID: 'Pendo',
+                tier: 'silver'
+            });
+
+       //      Segment Group Call
+            analytics.group('Pendo', {
+                Industry: 'SaaS'
+            });
+
+            // You should replace 'analytics' with your actual Segment analytics object.
+            // Make sure you have the Segment analytics library included in your project.
+
+            alert('Segment Track and Group calls fired!');
         });
     </script>
 </body>
