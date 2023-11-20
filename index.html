@@ -15,6 +15,7 @@
     <button id="segmentButton2">Click Me-Identify+Group</button>
     <button id="segmentButton3">Click Me-Track</button>
     <button id="segmentButton4">Click Me-Track+Group</button>
+    <button id="segmentButton5">Click Me-Track+Group</button>
 
     <script>
         document.getElementById("segmentButton").addEventListener("click", function() {
@@ -91,6 +92,25 @@
             // Make sure you have the Segment analytics library included in your project.
 
             alert('Segment Track and Group calls fired!');
+        });
+    </script>
+    <script>
+        document.getElementById("segmentButton5").addEventListener("click", function() {
+           // Segment Track Call
+            pendo.track('Track Call', {
+                full_name: 'Rickey Di Dio',
+                tier: 'silver'
+            });
+
+       //      Segment Group Call
+         //   analytics.group('Pendo', {
+        //        Industry: 'SaaS'
+        //    });
+
+            // You should replace 'analytics' with your actual Segment analytics object.
+            // Make sure you have the Segment analytics library included in your project.
+
+            alert('Pendo Track call fired!');
         });
     </script>
 </body>
